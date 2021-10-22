@@ -1,3 +1,4 @@
+provider "aws" {
   region = "us-east-1"
 }
 
@@ -7,7 +8,7 @@ data "http" "myip" {
 
 resource "aws_instance" "pipeline-jenkins-colucci" {
   ami                         = "ami-09e67e426f25ce0d7"
-  instance_type               = "t2.medium"
+  instance_type               = "t2.micro"
   key_name                    = "kp-colucci"
   subnet_id                   = "subnet-0dbc6439c94e66d76"
   associate_public_ip_address = true
