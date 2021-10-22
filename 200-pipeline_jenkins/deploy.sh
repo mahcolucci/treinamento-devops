@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd terraform
+cd 200-pipeline_jenkins/terraform
 /usr/local/bin/terraform init
 /usr/local/bin/terraform fmt
 /usr/local/bin/terraform apply -auto-approve
