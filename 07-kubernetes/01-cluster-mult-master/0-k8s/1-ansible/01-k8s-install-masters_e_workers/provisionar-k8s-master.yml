@@ -1,4 +1,5 @@
 - hosts:
+  - ec2-k8s-m1
   - ec2-k8s-m2
   - ec2-k8s-m3
   become: yes
