@@ -1,0 +1,26 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Clone repo') {
+            steps {
+                git url: 'https://github.com/mahcolucci/treinamento-devops', branch: 'main'
+            }
+        }
+        stage('Build EC2') {
+            steps {
+                sh "200-pipeline_jenkins/deploy.sh"
+            }
+        }
+        stage('Test Nginx') {
+            steps {
+                sh "200-pipeline_jenkins/test.sh"
+            }
+        }
+        stage('Build AMI') {
+            steps {
+                sh "ls -la"
+            }
+        }
+    }
+}
